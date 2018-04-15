@@ -1,0 +1,19 @@
+<!DOCTYPE html><html lang=en><head><meta charset=UTF-8><meta name=viewport content="width=device-width, initial-scale=1.0"><meta http-equiv=X-UA-Compatible content="ie=edge"><title>Document</title><link rel=stylesheet href=./css/style-79217a5344.min.css></head><body><form><input type=text name=username id=username> <input type=password id=pwd> <button type=button id=btn>登录</button></form><script src=./js/main.js></script><script>
+        $(function() {
+            $("#btn").on("click", () => {
+                let Name = $("#username").val();
+                let pwd = $("#pwd").val();
+                $.ajax({
+                    url: "/login",
+                    type: "post",
+                    data: {
+                        username: Name,
+                        password: pwd
+                    },
+                    success: (data) => {
+                        console.log(data + "");
+                    }
+                })
+            })
+        })
+    </script></body></html>
